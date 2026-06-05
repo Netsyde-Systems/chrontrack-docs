@@ -23,3 +23,7 @@ In the Teams section, click the **remove** button next to a team. The team's sha
 Team creators can see all managed accounts assigned to their team on the **Teams** page under the Dependants section of the team detail panel.
 
 > Only the **owner** of a managed account can assign or remove teams.
+
+## Invite emails and managed accounts
+
+When a new member is invited to a team that cares for one or more managed accounts, the invite email lists the names of those dependants. This lets the invitee know in advance whose accounts they will be able to access before accepting.

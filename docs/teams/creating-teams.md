@@ -23,6 +23,14 @@ Teams let you collaborate with other Chrontrack users — sharing task categorie
 
 The invitee receives a pending invitation. They can accept or decline from the banner at the top of their Teams page.
 
+ChronTrack also sends the invitee an **email notification**. The email includes:
+
+- The name of the team and the person who invited them
+- Any **task categories** currently shared with the team
+- Any **dependant accounts** the team helps manage
+
+If the invitee already has a ChronTrack account, the email links directly to the accept page. If they don't have an account yet, the link takes them to sign up first, then automatically accepts the invitation.
+
 ![Pending invite banner](/img/screenshots/teams-invite-banner.png)
 
 ## Editing team details
