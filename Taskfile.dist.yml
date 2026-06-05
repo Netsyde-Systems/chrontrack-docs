@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+
+  docs:dev:
+    desc: Start the docs live-reload dev server (no search index)
+    cmds:
+      - powershell -NoProfile -Command "Start-Process 'http://localhost:3000'"
+      - npm run start --workspace=apps/docs
+
+  docs:build:
+    desc: Build the docs site
+    cmds:
+      - npm run build --workspace=apps/docs
+
+  docs:serve:
+    desc: Build and serve the docs site with search enabled
+    cmds:
+      - task: docs:build
+      - powershell -NoProfile -Command "Start-Process 'http://localhost:3000'"
+      - npm run serve --workspace=apps/docs
+
+  docs:screenshots:
+    desc: Capture screenshots from the app (mock mode) into the docs
+    cmds:
+      - npm run screenshots --workspace=apps/docs
