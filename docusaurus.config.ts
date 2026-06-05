@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://docs.chrontrack.com',
+  url: 'https://docs.chrontrack.app',
   baseUrl: '/',
 
   organizationName: 'netsyde-systems',
