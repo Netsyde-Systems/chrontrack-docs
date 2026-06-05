@@ -23,8 +23,8 @@ async function waitForServer(url: string, retries = 30, delayMs = 1000): Promise
 }
 
 function startDevServer(): ChildProcess {
-  return spawn('npm', ['run', 'dev', '--workspace=apps/web'], {
-    cwd: path.resolve(__dirname, '../../../'),
+  return spawn('npm', ['run', 'dev'], {
+    cwd: path.resolve(__dirname, '../../chrontrack/apps/web'),
     env: MOCK_ENV,
     stdio: 'pipe',
     shell: true,
@@ -40,7 +40,7 @@ async function login(page: import('playwright').Page) {
 }
 
 async function shot(page: import('playwright').Page, name: string) {
-  await page.waitForLoadState('networkidle');
+  await page.waitForLoadState('domcontentloaded');
   await page.screenshot({ path: path.join(OUT_DIR, `${name}.png`), fullPage: false });
   console.log(`  ✓ ${name}.png`);
 }
@@ -163,8 +163,10 @@ async function main() {
 
     await browser.close();
     console.log(`\nAll screenshots saved to: ${OUT_DIR}`);
+    console.log('Done ✓');
   } finally {
     server.kill();
+    process.exit(0);
   }
 }
 
